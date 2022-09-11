@@ -11,4 +11,10 @@ public class PlayerController : MonoBehaviour
         
     }
 
+
+    void OnMove(InputValue movementValue)
+    {
+        //Function Body
+    
+    }
 }
