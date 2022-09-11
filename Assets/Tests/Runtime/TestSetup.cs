@@ -33,7 +33,7 @@ namespace Tests
             Assert.True(offset.x - offset2.x < .4);
             Assert.True(offset.z - offset2.z < .4);
         }
-        
+
         [UnityTest]
         public IEnumerator TestPhysicsSetup()
         {
@@ -76,7 +76,7 @@ namespace Tests
             yield return new WaitForSeconds(1f);
             Assert.True(player.transform.position.z > 0f);
         }
-        
+
 
         [UnityTest]
         public IEnumerator TestPlayerDoesntFall()
