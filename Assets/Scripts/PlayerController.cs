@@ -19,4 +19,6 @@ public class PlayerController : MonoBehaviour
         //Function Body
         Vector2 movementVector = movementValue.Get<Vector2>();
     }
+
+    void FixedUpdate()
 }
