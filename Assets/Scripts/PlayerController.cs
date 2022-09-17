@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(movement * speed);
     }
 
+    //pick up 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("PickUp"))
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour
             SetCountText();
         }
 
+    //lose life points
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.gameObject.SetActive(false);
@@ -64,6 +66,7 @@ public class PlayerController : MonoBehaviour
             SetCountText();
         }
 
+    //teleport player
         if (count >= 13)
         {
             transform.position = new Vector3(50.0f, 0.0f, 0.0f);
