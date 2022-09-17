@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         count = 0;
 
+        rb = GetComponent<Rigidbody>();
+        life;
+
         SetCountText();
         winTextObject.SetActive(false);
     }
