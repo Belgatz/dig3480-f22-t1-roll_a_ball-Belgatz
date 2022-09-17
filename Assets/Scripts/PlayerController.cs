@@ -42,9 +42,9 @@ public class PlayerController : MonoBehaviour
         if (count >= 21)
         {
             winTextObject.SetActive(true);
-        
-        
         }
+
+        lifeTex
     }
     void FixedUpdate()
     {
