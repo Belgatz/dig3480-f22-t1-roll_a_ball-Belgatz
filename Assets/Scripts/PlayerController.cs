@@ -57,11 +57,5 @@ public class PlayerController : MonoBehaviour
 
             SetCountText();
         }
-        else if (other.gameObject.CompareTag("Enemy"))
-        {
-            other.gameObject.SetActive(false);
-            count = count - 1;
-            SetCountText();
-        }
     }
 }
