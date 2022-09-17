@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public GameObject winTextObject;
 
     private Rigidbody rb;
-    private int count;
+    private int count, life;
     private float movementX;
     private float movementY;
     // Start is called before the first frame update
