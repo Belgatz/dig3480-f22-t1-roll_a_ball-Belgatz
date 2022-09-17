@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 13)
+        if (count >= 21)
         {
             winTextObject.SetActive(true);
         }
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
             SetCountText();
         }
 
-    //lose life points
+        //lose life points
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.gameObject.SetActive(false);
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
             SetCountText();
         }
 
-    //teleport player
+        //teleport player
         if (count >= 13)
         {
             transform.position = new Vector3(50.0f, 0.0f, 0.0f);
