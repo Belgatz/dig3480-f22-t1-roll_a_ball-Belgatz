@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
         if (count >= 21)
         {
             winTextObject.SetActive(true);
+        
+        
         }
     }
     void FixedUpdate()
