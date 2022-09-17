@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //teleport player
-        if (count >= 13)
+        if (count = 13)
         {
             transform.position = new Vector3(50.0f, 0.0f, 0.0f);
         }
