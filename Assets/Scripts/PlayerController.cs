@@ -8,13 +8,13 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 0;
     public TextMeshProUGUI countText;
-    public TextMeshProUGUI livesText;
+    public TextMeshProUGUI lpText;
     public GameObject winTextObject;
     public GameObject LoseTextObject;
 
     private Rigidbody rb;
     private int count;
-    private int lives;
+    private int lifepoints;
     private float movementX;
     private float movementY;
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
         count = 0;
 
         rb = GetComponent<Rigidbody>();
-        lives = 3;
+        lifepoints = 3;
 
         SetCountText();
         winTextObject.SetActive(false);
@@ -48,8 +48,8 @@ public class PlayerController : MonoBehaviour
             winTextObject.SetActive(true);
         }
 
-        livesText.text = "Lives: " + lives.ToString();
-        if (lives == 0)
+        lpText.text = "Life Points: " + lives.ToString();
+        if (lifepoints == 0)
         {
             LoseTextObject.SetActive(true);
             Destroy(gameObject);
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             count = count + 1;
-            
+
             SetCountText();
         }
 
