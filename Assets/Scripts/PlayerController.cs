@@ -8,10 +8,13 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 0;
     public TextMeshProUGUI countText;
+    public TextMeshProUGUI livesText;
     public GameObject winTextObject;
+    public GameObject LoseTextObject;
 
     private Rigidbody rb;
-    private int count, life;
+    private int count;
+    private int lives;
     private float movementX;
     private float movementY;
     // Start is called before the first frame update
@@ -21,13 +24,14 @@ public class PlayerController : MonoBehaviour
         count = 0;
 
         rb = GetComponent<Rigidbody>();
-        life;
+        lives = 3;
 
         SetCountText();
         winTextObject.SetActive(false);
+
+        SetCountText();
+        LoseTextObject.SetActive(false);
     }
-
-
     void OnMove(InputValue movementValue)
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
@@ -44,7 +48,12 @@ public class PlayerController : MonoBehaviour
             winTextObject.SetActive(true);
         }
 
-        lifeText.text
+        lifeText.text = "Lives: " + lives.ToString();
+        if (lives == 0)
+        {
+            LoseTextObject.SetActive(true);
+            Destroy(gameObject);
+        }
     }
     void FixedUpdate()
     {
@@ -56,6 +65,7 @@ public class PlayerController : MonoBehaviour
     //pick up 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
@@ -67,7 +77,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.gameObject.SetActive(false);
-            count = count - 1;
+            lives = lives - 1;
+
             SetCountText();
         }
 
