@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
             winTextObject.SetActive(true);
         }
 
-        lpText.text = "Life Points: " + lives.ToString();
+        lpText.text = "Life Points: " + lifepoints.ToString();
         if (lifepoints == 0)
         {
             LoseTextObject.SetActive(true);
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.gameObject.SetActive(false);
-            lives = lives - 1;
+            lifepoints = lifepoints - 1;
 
             SetCountText();
         }
